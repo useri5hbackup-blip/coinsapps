@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>StreamCoins – Recharge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <!-- Top navigation / header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="brand-logo">SC</div>
+        <div class="brand-name">StreamCoins</div>
+      </div>
+      <div class="header-right">
+        <div class="user-info">
+          <img src="https://via.placeholder.com/32" class="avatar" alt="User avatar" />
+          <span class="username">@username</span>
+        </div>
+        <div class="balance">
+          <span class="balance-label">Balance</span>
+          <div class="balance-value">
+            <span class="coin-icon">◎</span>
+            <span id="coin-balance">0</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="content">
+      <!-- Left: coin packages -->
+      <section class="packages-section">
+        <h1 class="section-title">Recharge Coins</h1>
+        <p class="section-subtitle">
+          Choose a coin package to support your favorite creators with virtual gifts.
+        </p>
+
+        <div class="packages-grid" id="packages">
+          <!-- Each package item -->
+          <button class="package-card selected" data-coins="70" data-price="0.99">
+            <div class="package-main">
+              <div class="package-coins">
+                <span class="coin-icon">◎</span>
+                <span class="coin-amount">70</span>
+              </div>
+              <div class="package-price">$0.99</div>
+            </div>
+            <div class="package-tag">Best for trying</div>
+          </button>
+
+          <button class="package-card" data-coins="350" data-price="4.99">
+            <div class="package-main">
+              <div class="package-coins">
+                <span class="coin-icon">◎</span>
+                <span class="coin-amount">350</span>
+              </div>
+              <div class="package-price">$4.99</div>
+            </div>
+            <div class="package-tag">Popular</div>
+          </button>
+
+          <button class="package-card" data-coins="700" data-price="9.99">
+            <div class="package-main">
+              <div class="package-coins">
+                <span class="coin-icon">◎</span>
+                <span class="coin-amount">700</span>
+              </div>
+              <div class="package-price">$9.99</div>
+            </div>
+            <div class="package-tag">Save more</div>
+          </button>
+
+          <button class="package-card" data-coins="1400" data-price="19.99">
+            <div class="package-main">
+              <div class="package-coins">
+                <span class="coin-icon">◎</span>
+                <span class="coin-amount">1,400</span>
+              </div>
+              <div class="package-price">$19.99</div>
+            </div>
+            <div class="package-tag">Value pack</div>
+          </button>
+
+          <button class="package-card" data-coins="3500" data-price="49.99">
+            <div class="package-main">
+              <div class="package-coins">
+                <span class="coin-icon">◎</span>
+                <span class="coin-amount">3,500</span>
+              </div>
+              <div class="package-price">$49.99</div>
+            </div>
+            <div class="package-tag">Big supporter</div>
+          </button>
+
+          <button class="package-card" data-coins="7000" data-price="99.99">
+            <div class="package-main">
+              <div class="package-coins">
+                <span class="coin-icon">◎</span>
+                <span class="coin-amount">7,000</span>
+              </div>
+              <div class="package-price">$99.99</div>
+            </div>
+            <div class="package-tag">Super fan</div>
+          </button>
+        </div>
+
+        <p class="note">
+          Coins can be used to send virtual gifts during live streams. Creators may receive
+          a share of the value through in‑app rewards in accordance with your platform’s policy.
+        </p>
+      </section>
+
+      <!-- Right: payment and summary -->
+      <aside class="payment-section">
+        <h2 class="section-title">Order summary</h2>
+
+        <div class="summary-row">
+          <span>Selected package</span>
+          <span id="summary-coins">70 Coins</span>
+        </div>
+        <div class="summary-row">
+          <span>Price</span>
+          <span id="summary-price">$0.99</span>
+        </div>
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <span id="summary-total">$0.99</span>
+        </div>
+
+        <div class="payment-methods">
+          <h3 class="payment-title">Payment method</h3>
+          <label class="payment-option">
+            <input type="radio" name="payment" value="card" checked />
+            <span class="payment-label">Credit or debit card</span>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="payment" value="paypal" />
+            <span class="payment-label">PayPal</span>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="payment" value="wallet" />
+            <span class="payment-label">Balance / Wallet</span>
+          </label>
+        </div>
+
+        <button id="buy-now" class="buy-button">Buy now</button>
+
+        <p class="disclaimer">
+          By continuing, you agree to the platform’s virtual currency terms, refund policy, and
+          community guidelines. Virtual items may not be redeemable for cash.
+        </p>
+
+        <ul class="help-links">
+          <li><a href="#">Virtual currency terms</a></li>
+          <li><a href="#">Refund policy</a></li>
+          <li><a href="#">Help center</a></li>
+        </ul>
+      </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-left">
+        <span>© 2025 StreamCoins</span>
+      </div>
+      <div class="footer-right">
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookies</a>
+      </div>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast hidden">
+    Purchase simulated – connect a real payment backend to complete payments.
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
